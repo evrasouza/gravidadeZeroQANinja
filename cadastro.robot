@@ -18,3 +18,5 @@ Deve cadastrar um novo personagem
     Fill Text                  css=input[placeholder^="Nome"]        Mestre Yoda
     Fill Text                  css=input[placeholder="Email"]        yoda@jedi.com
     Fill Text                  id=insta                              @yoda
+
+    Select Options By          css=.ordem select        text    Jedi
