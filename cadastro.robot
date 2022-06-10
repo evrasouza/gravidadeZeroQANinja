@@ -20,3 +20,18 @@ Deve cadastrar um novo personagem
     Fill Text                  id=insta                              @yoda
 
     Select Options By          css=.ordem select        text    Jedi
+
+    Select Birth Date          fevereiro    1970    20
+
+*** Keywords ***
+Select Birth Date
+    [Arguments]                ${month}    ${year}    ${day}
+    Click                      css=input[placeholder^="Data"]
+
+    Select Options By          xpath=(//header[@class="datepicker-header"]//select)[1]
+    ...                        text        ${month}
+
+    Select Options By          xpath=(//header[@class="datepicker-header"]//select)[2]
+    ...                        text        ${year}
+
+    Click                      //a[contains(@class, "datepicker-cell")]//span[text()="${day}"]
