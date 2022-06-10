@@ -30,3 +30,5 @@ Initialize the Browser library:<br>
 Referências:<br>
 👽 https://devhints.io/xpath<br>
 🤖 https://marketsquare.github.io/robotframework-browser/Browser.html<br>
+Referência:<br>
+https://bit.ly/3AWpd4J<br>
