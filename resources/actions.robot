@@ -1,0 +1,55 @@
+*** Settings ***
+Documentation        Ações customizadas do Yodapp
+
+Resource         ../resources/base.robot
+
+*** Keywords ***
+Go To Use form
+    #Dado que acesso o formulario
+    Click                      text=Novo
+
+    #Checkpoint (para saber se fomos de fato para a pagina de cadastro)
+    Wait For Elements State    css=.card-header-title
+    ...                        visible    5
+
+Fill Use form
+    [Arguments]    ${name}    ${email}    ${ordem}    ${bdate}    ${instagram}
+    #Quando preencho este formulario com os dados do Mestre Yoda
+    Fill Text                  css=input[name="nome"]        ${name}
+    Fill Text                  css=input[name="email"]       ${email}
+    
+    Select Options By          css=.ordem select     text    ${ordem}
+
+    Select Birth Date          ${bdate}
+
+    Fill Text                  id=insta                      ${instagram}
+
+Select Jedi
+    [Arguments]    ${tpJedi}
+    Click          xpath=//input[@value="${tpJedi}"]/..//span[@class="check"]
+
+Check Accept Communications
+    Click                      xpath=//input[@name="comunications"]/..//span[@class="check"]
+
+Submmit Use Form
+    Click                      css=button >> text=Cadastrar
+
+Select Birth Date
+    [Arguments]                ${text_date}
+
+    @{date}                    Split String               ${text_date}        -
+
+    Click                      css=input[placeholder^="Selecione"]
+
+    Select Options By          xpath=(//header[@class="datepicker-header"]//select)[1]
+    ...                        text        ${date}[0]
+
+    Select Options By          xpath=(//header[@class="datepicker-header"]//select)[2]
+    ...                        text        ${date}[1]
+
+    Click                      //a[contains(@class, "datepicker-cell")]//span[text()="${date}[2]"]
+
+Toaster Message Should Be
+    [Arguments]        ${Expect_Message}
+    Wait For Elements State    css=.toast div >> text=${Expect_Message}
+    ...                        visible    5

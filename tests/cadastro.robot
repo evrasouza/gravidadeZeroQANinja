@@ -1,7 +1,9 @@
 *** Settings ***
 Documentation    Suite de testes do cadastro de personagens
 
-Resource         ${EXECDIR}/resources/base.robot
+Resource         ../resources/base.robot
+Resource         ../resources/actions.robot
+
 Library          Browser
 
 Test Setup       Start Session
@@ -10,79 +12,19 @@ Test Teardown    End Session
 *** Test Cases ***
 Deve cadastrar um novo personagem
     [Tags]        happy
-    #Dado que acesso o formulario
-    Click                      text=Novo
 
-    #Checkpoint (para saber se fomos de fato para a pagina de cadastro)
-    Wait For Elements State    css=.card-header-title
-    ...                        visible    5
-
-    #Quando preencho este formulario com os dados do Mestre Yoda
-    Fill Text                  css=input[placeholder^="Nome"]        Mestre Yoda
-    Fill Text                  css=input[placeholder="Email"]        yoda@jedi.com
-    
-    Select Options By          css=.ordem select        text    Jedi
-    Click                      xpath=//input[@value="Cavaleiro Jedi"]/..//span[@class="check"]
-
-    Select Birth Date          fevereiro-1970-20
-
-    Fill Text                  id=insta                              @yoda
-
-    Click                      xpath=//input[@name="comunications"]/..//span[@class="check"]
-
-    #E submeto este formulario
-    Click                      css=button >> text=Cadastrar
-
-    #Entao devo ver a mensagem de sucesso
-    Wait For Elements State    css=.toast div >> text=Usuário cadastrado com sucesso!
-    ...                        visible    5
-    # Sleep        1
-    # ${html}      Get Page Source
-    # Log          ${html}
+    Go To Use form
+    Fill Use form    Mestre Yoda    yoda@jedi.com    Jedi    fevereiro-1970-20    @yoda
+    Select Jedi      Cavaleiro Jedi
+    Check Accept Communications
+    Submmit Use Form
+    Toaster Message Should Be    Usuário cadastrado com sucesso!
 
 Email Incorreto
     [Tags]        env_email
-    #Dado que acesso o formulario
-    Click                      text=Novo
 
-    #Checkpoint (para saber se fomos de fato para a pagina de cadastro)
-    Wait For Elements State    css=.card-header-title
-    ...                        visible    5
-
-    #Quando preencho este formulario com os dados do Mestre Yoda
-    Fill Text                  css=input[placeholder^="Nome"]        Darth Vader
-    Fill Text                  css=input[placeholder="Email"]        vadder&hotmail.com
-    
-    Select Options By          css=.ordem select        text    Sith
-
-    Select Birth Date          dezembro-1980-15
-
-    Fill Text                  id=insta                              @vader
-
-    Click                      xpath=//input[@name="comunications"]/..//span[@class="check"]
-
-    #E submeto este formulario
-    Click                      css=button >> text=Cadastrar
-
-    #Entao devo ver a mensagem de sucesso
-    Wait For Elements State    css=.toast div >> text=Oops! O email é incorreto.
-    ...                        visible    5
-    # Sleep        1
-    # ${html}      Get Page Source
-    # Log          ${html}
-
-*** Keywords ***
-Select Birth Date
-    [Arguments]                ${text_date}
-
-    @{date}                    Split String               ${text_date}        -
-
-    Click                      css=input[placeholder^="Data"]
-
-    Select Options By          xpath=(//header[@class="datepicker-header"]//select)[1]
-    ...                        text        ${date}[0]
-
-    Select Options By          xpath=(//header[@class="datepicker-header"]//select)[2]
-    ...                        text        ${date}[1]
-
-    Click                      //a[contains(@class, "datepicker-cell")]//span[text()="${date}[2]"]
+    Go To Use form
+    Fill Use form    Darth Vader    vader&hotmail.com    Sith    dezembro-1980-15    @vader
+    Check Accept Communications
+    Submmit Use Form
+    Toaster Message Should Be    Oops! O email é incorreto.
