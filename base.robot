@@ -2,6 +2,7 @@
 Documentation    Aqui não é suite, mas o arquivo principal do projeto
 
 Library          Browser
+Library          String
 
 *** Keywords ***
 Start Session

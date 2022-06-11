@@ -24,7 +24,7 @@ Deve cadastrar um novo personagem
     Select Options By          css=.ordem select        text    Jedi
     Click                      xpath=//input[@value="Cavaleiro Jedi"]/..//span[@class="check"]
 
-    Select Birth Date          fevereiro    1970    20
+    Select Birth Date          fevereiro-1970-20
 
     Fill Text                  id=insta                              @yoda
 
@@ -55,7 +55,7 @@ Email Incorreto
     
     Select Options By          css=.ordem select        text    Sith
 
-    Select Birth Date          dezembro    1980    15
+    Select Birth Date          dezembro-1980-15
 
     Fill Text                  id=insta                              @vader
 
@@ -73,13 +73,16 @@ Email Incorreto
 
 *** Keywords ***
 Select Birth Date
-    [Arguments]                ${month}    ${year}    ${day}
+    [Arguments]                ${text_date}
+
+    @{date}                    Split String               ${text_date}        -
+
     Click                      css=input[placeholder^="Data"]
 
     Select Options By          xpath=(//header[@class="datepicker-header"]//select)[1]
-    ...                        text        ${month}
+    ...                        text        ${date}[0]
 
     Select Options By          xpath=(//header[@class="datepicker-header"]//select)[2]
-    ...                        text        ${year}
+    ...                        text        ${date}[1]
 
-    Click                      //a[contains(@class, "datepicker-cell")]//span[text()="${day}"]
+    Click                      //a[contains(@class, "datepicker-cell")]//span[text()="${date}[2]"]
