@@ -51,5 +51,8 @@ Select Birth Date
 
 Toaster Message Should Be
     [Arguments]        ${Expect_Message}
-    Wait For Elements State    css=.toast div >> text=${Expect_Message}
-    ...                        visible    5
+
+    ${element}         Set Variable        css=.toast div
+
+    Wait For Elements State    ${element}    visible        5
+    Get Text                   ${element}    equal          ${Expect_Message}

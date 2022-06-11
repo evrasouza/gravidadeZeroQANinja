@@ -24,7 +24,7 @@ Deve cadastrar um novo personagem
     Toaster Message Should Be    Usuário cadastrado com sucesso!
 
 Email Incorreto
-    [Tags]        env_email
+    [Tags]        inv_email
 
     &{user}       Factory Darth Vader
 
