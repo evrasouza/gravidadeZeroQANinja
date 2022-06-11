@@ -5,6 +5,7 @@ Resource         ../resources/base.robot
 Resource         ../resources/actions.robot
 
 Library          Browser
+Library          ../resources/factories/users.py
 
 Test Setup       Start Session
 Test Teardown    End Session
@@ -13,13 +14,7 @@ Test Teardown    End Session
 Deve cadastrar um novo personagem
     [Tags]        happy
 
-    &{user}        Create Dictionary
-    ...            name=Mestre Yoda
-    ...            email=yoda@jedi.com
-    ...            ordem=Jedi
-    ...            tpjedi=Cavaleiro Jedi
-    ...            bdate=fevereiro-1970-20
-    ...            instagram=@yoda
+    &{user}       Factory Yoda
 
     Go To Use form
     Fill Use form    ${user}
@@ -31,12 +26,7 @@ Deve cadastrar um novo personagem
 Email Incorreto
     [Tags]        env_email
 
-    &{user}        Create Dictionary
-    ...            name=Darth Vader
-    ...            email=vader&hotmail.com
-    ...            ordem=Sith
-    ...            bdate=dezembro-1980-15
-    ...            instagram=@vader
+    &{user}       Factory Darth Vader
 
     Go To Use form
     Fill Use form    ${user}

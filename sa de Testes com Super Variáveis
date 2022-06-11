@@ -1,0 +1,120 @@
+[33mcommit fa216fa52017f27094180722523fd1892a6ca0a5[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Sat Jun 11 14:39:50 2022 -0300
+
+    Massa de Testes com Super Variáveis
+
+[33mcommit bb7dd1ee00fc245b158725c21785be8cda06b931[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Sat Jun 11 14:19:44 2022 -0300
+
+    AppActions
+
+[33mcommit 2ca44e6b34a8f3ad14e9c2bfbd48b3964d3106ef[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Sat Jun 11 11:38:26 2022 -0300
+
+    Organizando os arquivos do Robot
+
+[33mcommit 0ebf74bb0b76485c556a248ba6f7b604a25e2bc8[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Sat Jun 11 11:23:53 2022 -0300
+
+    Split Strings
+
+[33mcommit 180fa5932a5739621d5d80775fd0b6c6010d0c38[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Sat Jun 11 11:06:05 2022 -0300
+
+    Executando por Tags
+
+[33mcommit 9b6cb5059f54ef08acb527dc38159aedc04ce30d[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Sat Jun 11 10:51:01 2022 -0300
+
+    Cobertura de Testes (Email incorreto)
+
+[33mcommit cddd9c9f99f3c6cba9b9dcbd706fd039114de22d[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Sat Jun 11 08:42:50 2022 -0300
+
+    Validando Toaster
+
+[33mcommit 0b4a81b1e4e6928e7a04b1c7df5f1814f26b0a0e[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Sat Jun 11 08:26:27 2022 -0300
+
+    Submetendo Formularios
+
+[33mcommit 9ff78c9f2f9c7e94999ef3941d49f3939db3db11[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Fri Jun 10 17:56:54 2022 -0300
+
+    Botões de Radio e Checkbox
+
+[33mcommit 400760f2ecaaf7fe024de26d476fb7be946e706c[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Fri Jun 10 15:39:39 2022 -0300
+
+    Datepicker de outro mundo com XPath
+
+[33mcommit 2160d0f184297a3d981c254c2ee1ed2dbc51ff71[m
+Merge: 5e93d03 2ab496b
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Fri Jun 10 14:01:51 2022 -0300
+
+    Merge branch 'main' of github.com:evrasouza/gravidadeZeroQANinja
+
+[33mcommit 5e93d034ca50748c182d4eea89c48f4edeafdd65[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Fri Jun 10 14:01:46 2022 -0300
+
+    Selecionando Opções
+
+[33mcommit 2ab496bd428d7e10d74eb06a89c4c3204a50cf02[m
+Author: Everton Souza <68034079+evrasouza@users.noreply.github.com>
+Date:   Fri Jun 10 14:01:17 2022 -0300
+
+    Update README.md
+
+[33mcommit d24b139a5247e87c7a01c6deee04ac14d5a44f3c[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Fri Jun 10 13:02:04 2022 -0300
+
+    Preenchendo Campos e mais...
+
+[33mcommit 1f12d732989b3db55451cdf5320922a7eeee0e18[m
+Author: Everton Souza <68034079+evrasouza@users.noreply.github.com>
+Date:   Fri Jun 10 09:13:36 2022 -0300
+
+    Update README.md
+
+[33mcommit a6680993cf18e519172471bd781dee85d863b082[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Fri Jun 10 09:12:14 2022 -0300
+
+    Ganchos e Encapsulamento
+
+[33mcommit 5a2833d27f872ef59cad0d5109c0fbc53a2faf13[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Fri Jun 10 09:07:46 2022 -0300
+
+    Combinando Localizadores
+
+[33mcommit ea220d72ed6736cd80ef98efa2f3b3c815c9d1f0[m
+Author: Everton Souza <evrasouza@gmail.com>
+Date:   Fri Jun 10 07:59:00 2022 -0300
+
+    Primeiro Teste Automatizado
+
+[33mcommit 2712bab1264beb278541f7e0b080115eba910740[m
+Author: Everton Souza <68034079+evrasouza@users.noreply.github.com>
+Date:   Fri Jun 10 07:43:04 2022 -0300
+
+    Update README.md
+
+[33mcommit 248a060eaab57116f3a27f417aaae61ef4114490[m
+Author: Everton Souza <68034079+evrasouza@users.noreply.github.com>
+Date:   Fri Jun 10 06:47:50 2022 -0300
+
+    Initial commit
