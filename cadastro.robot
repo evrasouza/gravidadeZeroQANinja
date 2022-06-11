@@ -9,6 +9,7 @@ Test Teardown    End Session
 
 *** Test Cases ***
 Deve cadastrar um novo personagem
+    [Tags]        happy
     #Dado que acesso o formulario
     Click                      text=Novo
 
@@ -40,6 +41,7 @@ Deve cadastrar um novo personagem
     # Log          ${html}
 
 Email Incorreto
+    [Tags]        env_email
     #Dado que acesso o formulario
     Click                      text=Novo
 
