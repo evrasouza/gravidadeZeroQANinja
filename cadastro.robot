@@ -9,12 +9,14 @@ Test Teardown    End Session
 
 *** Test Cases ***
 Deve cadastrar um novo personagem
+    #Dado que acesso o formulario
     Click                      text=Novo
 
-    #Checkpoint    
+    #Checkpoint (para saber se fomos de fato para a pagina de cadastro)
     Wait For Elements State    css=.card-header-title
     ...                        visible    5
 
+    #Quando preencho este formulario com os dados do Mestre Yoda
     Fill Text                  css=input[placeholder^="Nome"]        Mestre Yoda
     Fill Text                  css=input[placeholder="Email"]        yoda@jedi.com
     
@@ -27,9 +29,15 @@ Deve cadastrar um novo personagem
 
     Click                      xpath=//input[@name="comunications"]/..//span[@class="check"]
 
+    #E submeto este formulario
     Click                      css=button >> text=Cadastrar
 
-    
+    #Entao devo ver a mensagem de sucesso
+    Wait For Elements State    css=.toast div >> text=Usuário cadastrado com sucesso!
+    ...                        visible    5
+    # Sleep        1
+    # ${html}      Get Page Source
+    # Log          ${html}
 
 *** Keywords ***
 Select Birth Date
