@@ -22,6 +22,7 @@ Deve cadastrar um novo personagem
     Check Accept Communications
     Submmit Use Form
     Toaster Message Should Be    Usuário cadastrado com sucesso!
+    Go To Home Page
 
 Email Incorreto
     [Tags]        inv_email

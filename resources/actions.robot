@@ -4,6 +4,10 @@ Documentation        Ações customizadas do Yodapp
 Resource         ../resources/base.robot
 
 *** Keywords ***
+Go To Home Page
+    Go To    ${BASE_URL}
+    Wait For Elements State    css=.carousel    visible    5
+
 Go To Use form
     #Dado que acesso o formulario
     Click                      text=Novo
