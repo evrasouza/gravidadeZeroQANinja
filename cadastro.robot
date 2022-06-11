@@ -27,6 +27,10 @@ Deve cadastrar um novo personagem
 
     Click                      xpath=//input[@name="comunications"]/..//span[@class="check"]
 
+    Click                      css=button >> text=Cadastrar
+
+    
+
 *** Keywords ***
 Select Birth Date
     [Arguments]                ${month}    ${year}    ${day}
