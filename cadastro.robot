@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Suite de testes do cadastro de eprsonagens
+Documentation    Suite de testes do cadastro de personagens
 
 Resource         base.robot
 Library          Browser
@@ -34,6 +34,36 @@ Deve cadastrar um novo personagem
 
     #Entao devo ver a mensagem de sucesso
     Wait For Elements State    css=.toast div >> text=Usuário cadastrado com sucesso!
+    ...                        visible    5
+    # Sleep        1
+    # ${html}      Get Page Source
+    # Log          ${html}
+
+Email Incorreto
+    #Dado que acesso o formulario
+    Click                      text=Novo
+
+    #Checkpoint (para saber se fomos de fato para a pagina de cadastro)
+    Wait For Elements State    css=.card-header-title
+    ...                        visible    5
+
+    #Quando preencho este formulario com os dados do Mestre Yoda
+    Fill Text                  css=input[placeholder^="Nome"]        Darth Vader
+    Fill Text                  css=input[placeholder="Email"]        vadder&hotmail.com
+    
+    Select Options By          css=.ordem select        text    Sith
+
+    Select Birth Date          dezembro    1980    15
+
+    Fill Text                  id=insta                              @vader
+
+    Click                      xpath=//input[@name="comunications"]/..//span[@class="check"]
+
+    #E submeto este formulario
+    Click                      css=button >> text=Cadastrar
+
+    #Entao devo ver a mensagem de sucesso
+    Wait For Elements State    css=.toast div >> text=Oops! O email é incorreto.
     ...                        visible    5
     # Sleep        1
     # ${html}      Get Page Source
