@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Suite de testes para verificar se o app esta Online
 
-Resource         base.robot
+Resource         ../resources/base.robot
 Library          Browser
 
 Test Setup       Start Session
