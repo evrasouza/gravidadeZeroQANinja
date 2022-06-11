@@ -13,20 +13,20 @@ Go To Use form
     ...                        visible    5
 
 Fill Use form
-    [Arguments]    ${name}    ${email}    ${ordem}    ${bdate}    ${instagram}
+    [Arguments]    ${user}
     #Quando preencho este formulario com os dados do Mestre Yoda
-    Fill Text                  css=input[name="nome"]        ${name}
-    Fill Text                  css=input[name="email"]       ${email}
+    Fill Text                  css=input[name="nome"]        ${user}[name]
+    Fill Text                  css=input[name="email"]       ${user}[email]
     
-    Select Options By          css=.ordem select     text    ${ordem}
+    Select Options By          css=.ordem select     text    ${user}[ordem]
 
-    Select Birth Date          ${bdate}
+    Select Birth Date          ${user}[bdate]
 
-    Fill Text                  id=insta                      ${instagram}
+    Fill Text                  id=insta                      ${user}[instagram]
 
 Select Jedi
-    [Arguments]    ${tpJedi}
-    Click          xpath=//input[@value="${tpJedi}"]/..//span[@class="check"]
+    [Arguments]    ${tpjedi}
+    Click          xpath=//input[@value="${tpjedi}"]/..//span[@class="check"]
 
 Check Accept Communications
     Click                      xpath=//input[@name="comunications"]/..//span[@class="check"]
