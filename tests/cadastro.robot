@@ -23,6 +23,7 @@ Deve cadastrar um novo personagem
     Submmit Use Form
     Toaster Message Should Be    Usuário cadastrado com sucesso!
     Go To Home Page
+    User Should Be Visible    ${user}
 
 Email Incorreto
     [Tags]        inv_email

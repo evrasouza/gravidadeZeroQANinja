@@ -60,3 +60,14 @@ Toaster Message Should Be
 
     Wait For Elements State    ${element}    visible        5
     Get Text                   ${element}    equal          ${Expect_Message}
+
+User Should Be Visible
+    [Arguments]                ${user}
+
+    ${element}                 Set Variable        xpath=//td[contains(text(), "${user}[email]")]/..
+
+    Wait For Elements State    ${element}        visible    5
+    Get Text                   ${element}        contains        ${user}[name]
+    Get Text                   ${element}        contains        ${user}[email]
+    Get Text                   ${element}        contains        ${user}[instagram]
+
